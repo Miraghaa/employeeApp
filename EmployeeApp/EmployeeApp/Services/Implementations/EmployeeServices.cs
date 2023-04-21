@@ -8,6 +8,7 @@ namespace EmployeeApp.Services.Implementations
     public class EmployeeServices : IEmployeeService
     {
         private readonly EmployeeRepository _employeerepository=new EmployeeRepository();
+        
         public void Create()
         {
            Employee employee = new Employee();
@@ -16,7 +17,7 @@ namespace EmployeeApp.Services.Implementations
             Console.WriteLine("Add Surname");
             employee.Surname = Console.ReadLine().Trim();
             Console.WriteLine("Add salary");
-            employee.Salary=double.Parse( Console.ReadLine().Trim());
+            double.TryParse( Console.ReadLine().Trim(),out double salary);
             Console.WriteLine("Add Position");
             employee.Position = Console.ReadLine().Trim();
             _employeerepository.Create( employee );

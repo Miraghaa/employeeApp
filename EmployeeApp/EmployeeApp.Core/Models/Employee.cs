@@ -11,15 +11,17 @@ namespace EmployeeApp.Core.Models
         public string Position { get; set; }
 
 
-        public Employee() 
+        public Employee()
         {
+            
             _id++;
             Id = _id;
         }
+        
 
         public override string ToString()
         {
-            return $"{Id} {Name} {Surname} {Salary} {Position}";
+            return $"{Id} {Name} {Surname} {Salary} {Position} {CreatedDate} {UpdatedDate}";
         }
     }
 
